@@ -1,4 +1,4 @@
-# smallHelpers
+# utils-general
 
 collection of small repos that may be handy 
 
