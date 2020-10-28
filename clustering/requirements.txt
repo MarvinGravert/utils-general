@@ -1,5 +1,0 @@
-decouple
-sklearn
-numpy
-matplotlib
-pandas
