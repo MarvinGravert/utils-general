@@ -3,13 +3,18 @@ syntax="proto3";
 //package unary;
 
 service SimpelCom{
-    rpc NumberTrade(SimpleCall) returns (SimpleResponse){}
+    rpc NumberTrade(ProcesData) returns (ProcesQuality){}
 }
 
-message SimpleCall{
+message ProcesData{
     string name=1;
+    repeated float data=2;
+    float brightness=3;
 }
 
-message SimpleResponse{
+message ProcesQuality{
     string quality=1;
+    float accuracy=2;
+    float standard_deviation=3;
+
 }

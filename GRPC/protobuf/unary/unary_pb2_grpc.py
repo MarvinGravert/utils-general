@@ -18,8 +18,8 @@ class SimpelComStub(object):
         """
         self.NumberTrade = channel.unary_unary(
                 '/SimpelCom/NumberTrade',
-                request_serializer=unary__pb2.SimpleCall.SerializeToString,
-                response_deserializer=unary__pb2.SimpleResponse.FromString,
+                request_serializer=unary__pb2.ProcesData.SerializeToString,
+                response_deserializer=unary__pb2.ProcesQuality.FromString,
                 )
 
 
@@ -39,8 +39,8 @@ def add_SimpelComServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'NumberTrade': grpc.unary_unary_rpc_method_handler(
                     servicer.NumberTrade,
-                    request_deserializer=unary__pb2.SimpleCall.FromString,
-                    response_serializer=unary__pb2.SimpleResponse.SerializeToString,
+                    request_deserializer=unary__pb2.ProcesData.FromString,
+                    response_serializer=unary__pb2.ProcesQuality.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -66,7 +66,7 @@ class SimpelCom(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/SimpelCom/NumberTrade',
-            unary__pb2.SimpleCall.SerializeToString,
-            unary__pb2.SimpleResponse.FromString,
+            unary__pb2.ProcesData.SerializeToString,
+            unary__pb2.ProcesQuality.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

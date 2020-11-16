@@ -19,24 +19,38 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0bunary.proto\"\x1a\n\nSimpleCall\x12\x0c\n\x04name\x18\x01 \x01(\t\"!\n\x0eSimpleResponse\x12\x0f\n\x07quality\x18\x01 \x01(\t2:\n\tSimpelCom\x12-\n\x0bNumberTrade\x12\x0b.SimpleCall\x1a\x0f.SimpleResponse\"\x00\x62\x06proto3'
+  serialized_pb=b'\n\x0bunary.proto\"<\n\nProcesData\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x03(\x02\x12\x12\n\nbrightness\x18\x03 \x01(\x02\"N\n\rProcesQuality\x12\x0f\n\x07quality\x18\x01 \x01(\t\x12\x10\n\x08\x61\x63\x63uracy\x18\x02 \x01(\x02\x12\x1a\n\x12standard_deviation\x18\x03 \x01(\x02\x32\x39\n\tSimpelCom\x12,\n\x0bNumberTrade\x12\x0b.ProcesData\x1a\x0e.ProcesQuality\"\x00\x62\x06proto3'
 )
 
 
 
 
-_SIMPLECALL = _descriptor.Descriptor(
-  name='SimpleCall',
-  full_name='SimpleCall',
+_PROCESDATA = _descriptor.Descriptor(
+  name='ProcesData',
+  full_name='ProcesData',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='SimpleCall.name', index=0,
+      name='name', full_name='ProcesData.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='data', full_name='ProcesData.data', index=1,
+      number=2, type=2, cpp_type=6, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='brightness', full_name='ProcesData.brightness', index=2,
+      number=3, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -53,22 +67,36 @@ _SIMPLECALL = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=15,
-  serialized_end=41,
+  serialized_end=75,
 )
 
 
-_SIMPLERESPONSE = _descriptor.Descriptor(
-  name='SimpleResponse',
-  full_name='SimpleResponse',
+_PROCESQUALITY = _descriptor.Descriptor(
+  name='ProcesQuality',
+  full_name='ProcesQuality',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='quality', full_name='SimpleResponse.quality', index=0,
+      name='quality', full_name='ProcesQuality.quality', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='accuracy', full_name='ProcesQuality.accuracy', index=1,
+      number=2, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='standard_deviation', full_name='ProcesQuality.standard_deviation', index=2,
+      number=3, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -84,27 +112,27 @@ _SIMPLERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=43,
-  serialized_end=76,
+  serialized_start=77,
+  serialized_end=155,
 )
 
-DESCRIPTOR.message_types_by_name['SimpleCall'] = _SIMPLECALL
-DESCRIPTOR.message_types_by_name['SimpleResponse'] = _SIMPLERESPONSE
+DESCRIPTOR.message_types_by_name['ProcesData'] = _PROCESDATA
+DESCRIPTOR.message_types_by_name['ProcesQuality'] = _PROCESQUALITY
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-SimpleCall = _reflection.GeneratedProtocolMessageType('SimpleCall', (_message.Message,), {
-  'DESCRIPTOR' : _SIMPLECALL,
+ProcesData = _reflection.GeneratedProtocolMessageType('ProcesData', (_message.Message,), {
+  'DESCRIPTOR' : _PROCESDATA,
   '__module__' : 'unary_pb2'
-  # @@protoc_insertion_point(class_scope:SimpleCall)
+  # @@protoc_insertion_point(class_scope:ProcesData)
   })
-_sym_db.RegisterMessage(SimpleCall)
+_sym_db.RegisterMessage(ProcesData)
 
-SimpleResponse = _reflection.GeneratedProtocolMessageType('SimpleResponse', (_message.Message,), {
-  'DESCRIPTOR' : _SIMPLERESPONSE,
+ProcesQuality = _reflection.GeneratedProtocolMessageType('ProcesQuality', (_message.Message,), {
+  'DESCRIPTOR' : _PROCESQUALITY,
   '__module__' : 'unary_pb2'
-  # @@protoc_insertion_point(class_scope:SimpleResponse)
+  # @@protoc_insertion_point(class_scope:ProcesQuality)
   })
-_sym_db.RegisterMessage(SimpleResponse)
+_sym_db.RegisterMessage(ProcesQuality)
 
 
 
@@ -115,16 +143,16 @@ _SIMPELCOM = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=78,
-  serialized_end=136,
+  serialized_start=157,
+  serialized_end=214,
   methods=[
   _descriptor.MethodDescriptor(
     name='NumberTrade',
     full_name='SimpelCom.NumberTrade',
     index=0,
     containing_service=None,
-    input_type=_SIMPLECALL,
-    output_type=_SIMPLERESPONSE,
+    input_type=_PROCESDATA,
+    output_type=_PROCESQUALITY,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
