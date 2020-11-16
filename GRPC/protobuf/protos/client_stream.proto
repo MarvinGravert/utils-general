@@ -1,0 +1,16 @@
+syntax="proto3";
+
+//package unary;
+
+service SimpelCom{
+    rpc NumberTrade(SimpleCall) returns (SimpleResponse){}
+}
+
+message SimpleCall{
+    string name=1;
+}
+
+message SimpleResponse{
+    string quality=1;
+}
+
