@@ -4,15 +4,18 @@ protos file. For each file create own folder
 Adjust the import statements
 """
 import glob
-from io import TextIOBase
 import re
 from grpc_tools import protoc
 from os import mkdir
-
+from itertools import chain
 # assume all code protocol buffers are in protos
 
 
 def generate_proto_code():
+    """
+    Generates proto code and returns list of generated pyton modules
+    Return: list of generated modules as strings
+    """
     """
     Get file names
     """
@@ -44,6 +47,13 @@ def generate_proto_code():
             file_path])
     """
     Adjust the import statement
+
+    GRPC doesnt really handle seperating proto file and python file
+    thus the python interpreter has a problem finding the module e.g.:
+    import example_a_pb2 as example__a__pb => import not working as the module
+    is not on $PATH
+    Instead the interpreter needs to be told to look in the same current dir:
+    from . import client_stream_pb2 as client__stream__pb2
     """
     for file_name in file_name_list:
         for script in glob.iglob(f"./{file_name}/*.py"):
@@ -52,6 +62,9 @@ def generate_proto_code():
                 file.seek(0)
                 file.write(re.sub(r'(import .+_pb2.*)', 'from . \\1', code))
                 file.truncate()
+
+    return list(chain.from_iterable(
+        [[f"{name}_pb2", f"{name}_pb2_grpc"] for name in file_name_list]))
 
 
 if __name__ == "__main__":
