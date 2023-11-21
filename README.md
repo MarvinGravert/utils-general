@@ -1,7 +1,4 @@
 # utils-general
 
-collection of small repos that may be handy 
+Collection of small code samples which may be handy
 
-## GRPC
-
-Contains code and examples for the communication protocol gRPC
